@@ -5,8 +5,10 @@ import { TitleComponent } from  '../view/TitleComponent'
 import { ListHeaderComponent } from  '../view/ListHeaderComponent'
 import { ListItemComponent } from '../view/ListItemComponent'
 import prompt from '@ohos.promptAction'
+import AppContext from '@ohos.app.ability.common'
 
 import { APP_EXIT_INTERVAL, Style, TIME, TITLE, WEIGHT } from '../common/Constants'
+import router from '@ohos.router'
 
 
 let rankModel: RankViewModel = new RankViewModel();
@@ -61,6 +63,16 @@ struct Index {
           bottom: Style.HEADER_MARGIN_BOTTOM
         })
       this.RankList(Style.CONTENT_WIDTH)
+      Button("Go Todo")
+        .margin({
+          top: 20
+        })
+        .fontSize(20)
+        .onClick(() => {
+          router.pushUrl({
+            url: 'pages/Todo'
+          })
+        })
     }
     .backgroundColor($r('app.color.background'))
     .height(WEIGHT)

@@ -1,6 +1,7 @@
 {
   "src": [
     "pages/Index",
-    "pages/Profile"
+    "pages/Profile",
+    "pages/Todo"
   ]
 }
